@@ -1,6 +1,10 @@
 ---
 driver:
-  name: vagrant
+  name: ec2
+  region: ap-northeast-1
+  availability_zone: ap-northeast-1a
+  require_chef_omnibus: true
+  instance_type: t3.micro
 
 ## The forwarded_port port feature lets you connect to ports on the VM guest via
 ## localhost on the host.
@@ -21,8 +25,7 @@ verifier:
   name: inspec
 
 platforms:
-  - name: ubuntu-18.04
-  - name: centos-7
+  - name: amazon-2018.03
 
 suites:
   - name: default
